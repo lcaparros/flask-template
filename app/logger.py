@@ -40,15 +40,19 @@ def get_custom_logger(app):
             l.addHandler(handler)
         l.propagate = False
         l.setLevel(logging.DEBUG)
+    
+    # Set root log to DEBUG level
+    logging.basicConfig(level=logging.DEBUG)
+
 
 
 # Log Common Formatter
 def common_formatter():
     return logging.Formatter(
-        '%(asctime)s.%(msecs)d\t %(levelname)s \t[%(name)s.%(funcName)s:%(lineno)d]\t %(message)s',
-        datefmt='%d/%m/%Y %H:%M:%S'
+        "%(asctime)s.%(msecs)d\t %(levelname)s \t[%(name)s.%(funcName)s:%(lineno)d]\t %(message)s",
+        datefmt="%d/%m/%Y %H:%M:%S"
     )
 
 # Log Json Formater
 def json_formatter():
-    return jsonlogger.JsonFormatter(fmt='%(asctime)s %(levelname)s %(name)s %(funcName)s %(lineno)d %(message)s')
+    return jsonlogger.JsonFormatter(fmt="%(asctime)s %(levelname)s %(name)s %(funcName)s %(lineno)d %(message)s")
