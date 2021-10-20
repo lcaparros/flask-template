@@ -15,7 +15,7 @@ Get a Flask app skeleton at the moment
 To run locally the application export the next two environment variables>
 
 ```shell
-export FLASK_APP=app/app
+export FLASK_APP=main
 export FLASK_ENV=development
 ```
 
